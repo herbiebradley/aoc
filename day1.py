@@ -6,7 +6,7 @@ def part1(nums):
             print(prod)
             break
         else:
-            prods.add
+            prods.add(prod)
 
 
 def part2(nums):
