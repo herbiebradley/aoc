@@ -1,15 +1,12 @@
 def part1(nums):
-    left, right = 0, len(nums) - 1
-    while True:
-        if left == right:
+    prods = set()
+    for i in nums:
+        prod = i * (2020 - i)
+        if prod in prods:
+            print(prod)
             break
-        if nums[left] + nums[right] == 2020:
-            print(nums[left] * nums[right])
-            break
-        elif nums[left] + nums[right] < 2020:
-            left += 1
-        elif nums[left] + nums[right] > 2020:
-            right -= 1
+        else:
+            prods.add
 
 
 def part2(nums):
