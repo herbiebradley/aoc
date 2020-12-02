@@ -28,7 +28,7 @@ if __name__ == "__main__":
     nums = []
     with open("day1.txt", 'r') as file:
         for line in file:
-            nums.append(int(line.strip('\n')))
+            nums.append(int(line.rstrip()))
     part1(nums)
     nums.sort()
     part2(nums)
