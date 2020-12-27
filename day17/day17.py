@@ -8,7 +8,7 @@ def game_of_life(board, dims, gens):
         board = np.expand_dims(board, 0)
 
     for _ in range(gens):
-        padded_board = np.pad(board, (1, 1))
+        padded_board = np.pad(board, 1)
         nbrs_count = convolve(board, kernel) - padded_board
         board = (nbrs_count == 3) | (padded_board & (nbrs_count == 2))
 
