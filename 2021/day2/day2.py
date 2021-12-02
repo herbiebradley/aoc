@@ -1,13 +1,12 @@
 def part1(data):
     pos, depth = 0, 0
     for line in data:
-        num = int(line[-1])
-        if line[0] == "f":
-            pos += num
-        elif line[0] == "u":
-            depth -= num
+        if line[0] == 'f':
+            pos += ord(line[8]) - ord('0')
+        elif line[0] == 'u':
+            depth -= ord(line[3]) - ord('0')
         else:
-            depth += num
+            depth += ord(line[5]) - ord('0')
 
     return pos * depth
 
@@ -15,14 +14,14 @@ def part1(data):
 def part2(data):
     pos, depth, aim = 0, 0, 0
     for line in data:
-        num = int(line[-1])
-        if line[0] == "f":
+        if line[0] == 'f':
+            num = ord(line[8]) - ord('0')
             pos += num
             depth += aim * num
-        elif line[0] == "u":
-            aim -= num
+        elif line[0] == 'u':
+            aim -= ord(line[3]) - ord('0')
         else:
-            aim += num
+            aim += ord(line[5]) - ord('0')
 
     return pos * depth
 
