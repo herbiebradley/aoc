@@ -27,8 +27,7 @@ def find_rating(arr: np.ndarray, bit_criteria: str = 'most'):
 
 
 def part2(data):
-    m = len(data[0])
-    a = 1 << np.arange(m)[::-1]
+    a = 1 << np.arange(len(data[0]))[::-1]
     data = (((np.array([int(x, 2) for x in data])[:, None] & a)) > 0).astype(int)
     oxy = find_rating(data, bit_criteria='most')
     co2 = find_rating(data, bit_criteria='least')
