@@ -30,10 +30,8 @@ def part2(data):
     m = len(data[0])
     a = 1 << np.arange(m)[::-1]
     data = (((np.array([int(x, 2) for x in data])[:, None] & a)) > 0).astype(int)
-    oxy = find_rating(data,
-                      bit_criteria='most')
-    co2 = find_rating(data,
-                      bit_criteria='least')
+    oxy = find_rating(data, bit_criteria='most')
+    co2 = find_rating(data, bit_criteria='least')
     return oxy.dot(a) * co2.dot(a)
 
 
