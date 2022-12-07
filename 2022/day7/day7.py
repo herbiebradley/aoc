@@ -1,7 +1,7 @@
 from anytree import Node, PostOrderIter
 
 
-with open("/home/users/hyper1on/aoc/2022/day6/day6.txt", 'r') as file:
+with open("day7.txt", 'r') as file:
     data = file.read().splitlines()
 
 root = Node("root", total_size=0)
